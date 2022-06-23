@@ -2,7 +2,8 @@ import { Fragment, useEffect,  useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCountryDetailRequest } from "../actions/detail";
 import { useNavigate, useParams } from "react-router-dom";
-import '../assets/App.css'
+import Loader from "./Loader";
+import '../assets/css/App.css'
 
 function Detail() {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ function Detail() {
 
     return ( 
         <>
-        {loading === true? <div className="details">Loading...</div>:
+        {loading === true? <Loader/> :
             <section className="details" id="details">
                 <button style={{border:'1px solid #D3D3D3'}} type="button" className="back-button" id="back-button" onClick={goBack}>Back</button>
 
@@ -44,9 +45,12 @@ function Detail() {
 
                             </div>
                             <div className="info-right">
-                                <p><b>Top Level Domain : </b>{detail.topLevelDomain[0]}</p>
-                                <p><b>Currencies : </b>{detail.currencies[0].name}</p>
-                                {/* <p><b>Languages : </b>{this.state.languages}</p> */}
+                                {detail && detail.topLevelDomain ?
+                                <p><b>Top Level Domain : </b>{detail.topLevelDomain[0]}</p>:
+                                <p><b>Top Level Domain : </b>NA</p>}
+                                {detail && detail.currencies ?
+                                <p><b>Currencies : </b>{detail.currencies[0].name}</p>:
+                                <p><b>Currencies : </b>NA</p>}
                             </div>
                         </div>
                         <div className="borders">

@@ -239,7 +239,7 @@
   
   
     .details{
-      width: 100%;
+      /* width: 100%; */
     }
     .details-view{
       flex-direction: column;
@@ -301,7 +301,7 @@
     border: 2px solid #4b5a91;
 }
 .loader-container{
-    min-height: 30vw;
+    min-height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;

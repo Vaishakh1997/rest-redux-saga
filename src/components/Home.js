@@ -4,7 +4,7 @@ import { Input } from 'reactstrap';
 import { fetchCountriesRequest } from "../actions/home";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
-import '../assets/App.css'
+import '../assets/css/App.css'
 
 
 function Home() {
