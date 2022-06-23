@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 import * as actions from '../action-types'
-import { fetchCountryDetailRequest, fetchCountryDetailSuccess, fetchCountryDetailFailure } from '../actions/detail';
+import { fetchCountryDetailSuccess, fetchCountryDetailFailure } from '../actions/detail';
 import { loadCountryDetailApi } from '../services/detail';
 
 

@@ -1,4 +1,4 @@
-import { Fragment, useEffect,  useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCountryDetailRequest } from "../actions/detail";
 import { useNavigate, useParams } from "react-router-dom";
@@ -23,6 +23,7 @@ function Detail() {
 
     return ( 
         <>
+        <section className="details">
         {loading === true? <Loader/> :
             <section className="details" id="details">
                 <button style={{border:'1px solid #D3D3D3'}} type="button" className="back-button" id="back-button" onClick={goBack}>Back</button>
@@ -71,6 +72,7 @@ function Detail() {
                 
             </section>
         }
+        </section>
         </>
      );
 }

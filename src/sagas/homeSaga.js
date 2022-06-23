@@ -1,7 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
-import axios from 'axios'
 import * as actions from '../action-types'
-import { fetchCountriesFailure, fetchCountriesRequest, fetchCountriesSuccess } from '../actions/home';
+import { fetchCountriesFailure, fetchCountriesSuccess } from '../actions/home';
 import { loadCountriesApi } from '../services/home';
 
 
