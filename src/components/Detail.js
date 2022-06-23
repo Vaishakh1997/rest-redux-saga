@@ -11,7 +11,6 @@ function Detail() {
     
     useEffect(() =>{
        dispatch(fetchCountryDetailRequest(params))
-       console.log(params);
     },[])
     
     const loading = useSelector(store => store.detailReducer.loading);
@@ -29,7 +28,7 @@ function Detail() {
 
                 {countryDetail && countryDetail.map(detail=>{
                     return(
-                        <div className="details-view">
+                        <div key={detail.name} className="details-view">
                     <div className="details-flag">
                         <img style={{width:'100%',height:'100%',}} src={detail.flag} alt=""></img>
                     </div>

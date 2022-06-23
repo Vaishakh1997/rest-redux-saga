@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Input } from 'reactstrap';
 import { fetchCountriesRequest } from "../actions/home";
 import { useNavigate } from "react-router-dom";
+import Loader from "./Loader";
 import '../assets/App.css'
 
 
@@ -61,7 +62,7 @@ function Home() {
                         </Input>
                         </div>
                     </div>
-                    {loading === true? <div className="country-layout-list">Loading...</div> :
+                    {loading === true? <Loader/> :
                     <div className="country-layout-list">
 
                         {countries && countries.map(country => {
