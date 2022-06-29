@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Input } from 'reactstrap';
 import { fetchCountriesRequest } from "../actions/home";
 import { useNavigate } from "react-router-dom";
-import Loader from "./Loader";
 import ContentLoader from 'react-content-loader'
 import '../assets/css/App.css'
 
@@ -17,7 +16,7 @@ function Home() {
     useEffect(() =>{
         let URL = `https://restcountries.com/v2/all`;
         dispatch(fetchCountriesRequest(URL))
-    },[])
+    },[dispatch])
     
     const loading = useSelector(store => store.homeReducer.loading);
     const countries = useSelector(store => store.homeReducer.countries);

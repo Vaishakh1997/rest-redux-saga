@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCountryDetailRequest } from "../actions/detail";
 import { useNavigate, useParams } from "react-router-dom";
 import ContentLoader from "react-content-loader";
-import Loader from "./Loader";
 import '../assets/css/App.css'
 
 function Detail() {
@@ -13,7 +12,7 @@ function Detail() {
     
     useEffect(() =>{
        dispatch(fetchCountryDetailRequest(params))
-    },[])
+    },[dispatch, params])
     
     const loading = useSelector(store => store.detailReducer.loading);
     const countryDetail = useSelector(store => store.detailReducer.countryDetail);
